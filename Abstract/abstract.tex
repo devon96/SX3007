@@ -17,21 +17,21 @@
   Alexandra Riddell, 51874156 \\
   Danah Alshuaib, 51663457 \\
   Ogtay Magsudov, 51662109 \\
-  Daniel Rennie, 123 \\
+  Daniel Rennie, 51769495 \\
   Waleed Totakhyl, 51550465}
 \begin{document}
 \maketitle
 \begin{multicols}{2}
 
 \paragraph{Introduction}
-In the digital age, when majority of our lives and assets is based on virtual systems (such as banking or even entire governments and their elections), it's important to ensure their security from potential threats; those can vary from simple thefts to even foreign states trying to spy on their enemies. To counteract those vectors, we often cipher our messages - normally, we use a shared, secret key, which can be used for both encrypting and decrypting the messages. But the problem of communicating the secret key first remains an issue and potential bottleneck. In order to workaround those shortcomings, we can also apply asymmetric encryption algorithms, where we use two separate entities to encode / decode the message: publicly advertised key and secret, never shared with anyone else, key. One of the example methods being RSA.
+In the digital age, when the majority of our lives and assets is based on virtual systems (such as banking or even entire governments and their elections), it's important to ensure their security from potential threats; those can vary from simple thefts to even foreign states trying to spy on their enemies. To counteract those vectors, we often cipher our messages - normally, we use a shared, secret key, which can be used for both encrypting and decrypting the messages. But the problem of communicating the secret key first remains an issue and potential bottleneck. In order to workaround those shortcomings, we can also apply asymmetric encryption algorithms, where we use two separate entities to encode / decode the message: publicly advertised key and secret, never shared with anyone else, key. One of the example methods being RSA.
 
 \paragraph{Basics of RSA Algorithm}
 Let's assume Alice and Bob want to share a message with each other, but don't want Eve to know. There is no secure channel established between A and B, i.e. Eve can freely read the communication between them.
 
 RSA can be applied to choose a public key-pair used for encrypting the messages and a private key which can be used for decryption. To start, Alice would choose two, large prime numbers, $p$ and $q$, their product $p*q \equiv n$ would make a part of the public key. Then, following Euler's totient - calculate the following value $\phi(pq) \equiv (p-1)(q-1)$ along with choosing relatively prime (that is, no number greater than 1 that would divide both numbers) number $e$ to the result - which completes the public key-pair. Now, to compute a private key, we'll have to find a number $d$ such that \(ed \equiv 1 \bmod \phi\), for that calculation, we can use Euler's theorem.
 
-Finally, having obtained both keys, Alice now sends $n$ and $e$ to Bob, keeping $d$ secret. Bob can now encrypt his message by calculating \(c = m^e \bmod n\), where $c$ is the ciphertext and $n$ is the secret message. Then, he sends encrypted message $c$ using insecure channel to Alice. She can then decrypt the message by plugging it into the following formula: $m \equiv c^d \bmod n$
+Finally, having obtained both keys, Alice now sends $n$ and $e$ to Bob, keeping $d$ secret. Bob can now encrypt his message by calculating \(c \equiv m^e \bmod n\), where $c$ is the ciphertext and $n$ is the secret message. Then, he sends encrypted message $c$ using insecure channel to Alice. She can then decrypt the message by plugging it into the following formula: $m \equiv c^d \bmod n$
 
 
 \paragraph{Integer factorization}
@@ -55,6 +55,6 @@ RSA algorithm nowadays can be found in many places online. One of the best examp
 
 
 \bibliography{abstract}
-{\huge \textbf{Word count:} 536}
+{\huge \textbf{Word count:} 537}
 \end{document}
 
